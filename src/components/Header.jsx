@@ -1,11 +1,12 @@
 import React from "react";
 import logoImg from "../assets/img/pizza-logo.svg"
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
-export default function Header() {
+export default function Header({searchValue,setSearchValue}) {
   return (
     <div className="p-[40px] border-b-[1px] border-slate-200">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center flex-wrap">
       <Link to="/">
       <div className="flex gap-4">
           <img width="38" src={logoImg}alt="Pizza logo" />
@@ -17,6 +18,7 @@ export default function Header() {
           </div>
         </div>
       </Link>
+      <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
         <div className="bg-[#FE5F1E] rounded-[30px] w-[150px] h-[50px] flex justify-center">
           <Link to="/cart" className="flex items-center text-[#fff] gap-2">
             <span className="border-r-[1px] border-slate-200 px-2">520 ₽</span>
